@@ -2,6 +2,7 @@ package br.com.hiquez.Controle_Rembolso_Corporativo.Controller;
 
 import java.util.Map;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.BadCredentialsException;
@@ -42,15 +43,16 @@ public class AuthenticationController {
             @ApiResponse(responseCode = "400", description = "Usuário ou senha incorretos.")
     })
     @PostMapping("/login/usuario")
-    public String logar(@RequestBody @Valid LoginUsuarioDTO usuario) {
+    public ResponseEntity<String> logar(@RequestBody @Valid LoginUsuarioDTO usuario) {
         try {
-            var tokenAuthentication = new UsernamePasswordAuthenticationToken(usuario.email(), usuario.senha());
+            var tokenAuthentication = new UsernamePasswordAuthenticationToken(usuario.nome(), usuario.senha());
             var authentication = manager.authenticate(tokenAuthentication);
 
             var user = (Usuario) authentication.getPrincipal();
-            return tokenService.gerarToken(user, user.getTipo().toString());
+            String token = tokenService.gerarToken(user, user.getTipo().toString());
+            return ResponseEntity.ok(token);
         } catch (BadCredentialsException e) {
-            return "Usuário ou senha incorretos.";
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Usuário ou senha incorretos.");
         }
     }
 

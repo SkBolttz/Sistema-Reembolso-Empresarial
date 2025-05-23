@@ -1,7 +1,7 @@
 package br.com.hiquez.Controle_Rembolso_Corporativo.Enum;
 
 public enum CategoriaReembolso {
-    
+
     ALIMENTACAO("Alimentação"),
     TRANSPORTE("Transporte"),
     COMBUSTIVEL("Combustível"),

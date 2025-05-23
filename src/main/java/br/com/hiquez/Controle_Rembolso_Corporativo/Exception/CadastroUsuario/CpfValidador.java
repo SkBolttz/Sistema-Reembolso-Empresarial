@@ -21,4 +21,3 @@ public class CpfValidador implements ValidadorCadastroUsuario {
         }
     }
 }
-

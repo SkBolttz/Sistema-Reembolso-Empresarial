@@ -37,8 +37,8 @@ public class AuthenticationService implements UserDetailsService {
     }
 
     @Override
-    public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
-        Usuario userExist = repository.findByEmail(email);
+    public UserDetails loadUserByUsername(String usernamne) throws UsernameNotFoundException {
+        Usuario userExist = repository.findByNome(usernamne);
 
         if (userExist != null) {
             return userExist;
@@ -51,8 +51,11 @@ public class AuthenticationService implements UserDetailsService {
         try {
             validadores.forEach(validador -> validador.validar(dto));
 
-            Usuario user = new Usuario(dto.nome(), dto.email(), dto.cpf(), passwordEncoder.encode(dto.senha()),
+            String password = passwordEncoder.encode(dto.senha());
+
+            Usuario user = new Usuario(dto.nome(), dto.email(), dto.cpf(), password,
                     verificarTipo(dto));
+
             Usuario salvo = repository.save(user);
             return token.gerarToken(salvo, salvo.getTipo().toString());
         } catch (CadastroException e) {

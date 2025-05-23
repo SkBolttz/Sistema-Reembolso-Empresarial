@@ -6,9 +6,9 @@ import org.springframework.stereotype.Repository;
 import br.com.hiquez.Controle_Rembolso_Corporativo.Entity.Usuario;
 
 @Repository
-public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
+public interface UsuarioRepository extends JpaRepository<Usuario, Long> {
 
-    Usuario findByEmail(String email);
+    Usuario findByEmail(String usernamne);
 
     boolean existsByEmail(String email);
 
@@ -17,5 +17,5 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Long>{
     boolean existsByNome(String nome);
 
     Usuario findByNome(String nomeSolicitante);
-    
+
 }

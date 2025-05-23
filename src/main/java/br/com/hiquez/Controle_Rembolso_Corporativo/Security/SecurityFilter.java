@@ -1,7 +1,6 @@
 package br.com.hiquez.Controle_Rembolso_Corporativo.Security;
 
 import java.io.IOException;
-
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -9,12 +8,9 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
-
 import com.auth0.jwt.JWT;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.interfaces.DecodedJWT;
-
-import br.com.hiquez.Controle_Rembolso_Corporativo.Exception.Security.SecurityFilterException;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -40,6 +36,7 @@ public class SecurityFilter extends OncePerRequestFilter {
         try {
             Algorithm algorithm = Algorithm.HMAC256(secret);
             DecodedJWT decodedJWT = JWT.require(algorithm)
+                    .withIssuer("Acesso")
                     .build()
                     .verify(token);
 
@@ -47,19 +44,24 @@ public class SecurityFilter extends OncePerRequestFilter {
             String role = decodedJWT.getClaim("tipo").asString();
 
             if (role == null || role.isEmpty()) {
-                throw new SecurityFilterException("O tipo de usuário não foi encontrado no token.");
+                filterChain.doFilter(request, response);
+                return;
             }
 
             UserDetails userDetails = User.builder()
-                    .username(usuario) 
+                    .username(usuario)
                     .password("")
-                    .authorities("ROLE_" + role)
+                    .authorities("ROLE_" + role.toUpperCase())
                     .build();
 
-            UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+            UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(userDetails,
+                    null, userDetails.getAuthorities());
+
             SecurityContextHolder.getContext().setAuthentication(authentication);
+
         } catch (Exception e) {
-            throw new SecurityFilterException("Erro ao verificar o token JWT: " + e.getMessage());
+            response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
+            return;
         }
 
         filterChain.doFilter(request, response);

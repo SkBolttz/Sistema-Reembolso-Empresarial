@@ -7,18 +7,9 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
 public record SolicitarReembolsoDTO(
-    @NotBlank
-    String nomeSolicitante,
-    @NotNull
-    double valorReembolso,
-    @NotBlank
-    String justificativa,
-    @NotNull
-    CategoriaReembolso categoriaReembolso,
-    @NotBlank
-    String comprovante,
-    @NotNull
-    LocalDate dataValorGasto
-) {
-    
+        @NotBlank String nomeSolicitante,
+        @NotNull double valorReembolso,
+        @NotBlank String justificativa,
+        @NotNull CategoriaReembolso categoriaReembolso,
+        @NotNull LocalDate dataValorGasto) {
 }

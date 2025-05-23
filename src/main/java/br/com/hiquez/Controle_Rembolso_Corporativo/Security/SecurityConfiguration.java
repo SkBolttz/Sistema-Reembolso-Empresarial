@@ -3,6 +3,7 @@ package br.com.hiquez.Controle_Rembolso_Corporativo.Security;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -23,12 +24,13 @@ public class SecurityConfiguration {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
+                .cors(Customizer.withDefaults())
                 .csrf(csrf -> csrf.disable())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/auth/registrar/**", "/api/auth/login/usuario")
-                        .permitAll()
+                        .requestMatchers("/api/auth/registrar/**", "/api/auth/login/usuario").permitAll()
                         .requestMatchers("/swagger-ui/**", "/v3/api-docs/**").permitAll()
-                        .requestMatchers("reembolso/todosAbertos", "reembolso/alterarStatusReembolso").hasAuthority("ROLE_FINANCEIRO")
+                        .requestMatchers("/reembolso/todosAbertos", "/reembolso/alterarStatusReembolso")
+                        .hasAnyAuthority("ROLE_GESTOR", "ROLE_FINANCEIRO")
                         .anyRequest().authenticated())
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .addFilterBefore(securityFilter, UsernamePasswordAuthenticationFilter.class);
