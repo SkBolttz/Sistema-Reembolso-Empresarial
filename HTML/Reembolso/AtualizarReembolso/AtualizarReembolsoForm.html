@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Detalhes do Reembolso</title>
+    <link rel="stylesheet" href="../../../CSS/Global/global.css">
+    <script src="../../../JS/Geral/particles.js"></script>
+    <script src="../../../JS/Geral/TranserPage.js"></script>
+    <script src="../../../JS/Geral/VerificarSolicitante.js"></script>
+    <script src="../../../JS/Reembolso/StatusReembolso/VisualizarReembolsoAtualizar.js"></script>
+    <script src="../../../JS/Reembolso/AtualizarReembolso/AtualizarDadosReembolso.js"></script>
+    <link rel="stylesheet" href="../../../CSS/Reembolso/AtualizarReembolsoForm.css">
+</head>
+
+<body>
+    <div id="toast" class="toast"></div>
+    <canvas id="particle-canvas"></canvas>
+
+    <header class="header">
+        <h2 id="nome-admin">Atualização de Reembolso!</h2>
+        <img src="../../../IMG/Bagwork.png" alt="IconPerson" id="IconPerson" style="cursor: pointer;" />
+        <nav>
+            <button onclick="window.location.href='../../../HTML/Reembolso/PainelReembolso/VerificarReembolso.html'">Meus
+                Reembolsos</button>
+            <button onclick="window.location.href='../../../HTML/Reembolso/SolicitarReembolso/SolicitarReembolso.html'">Solicitar
+                Reembolso</button>
+            <button onclick="window.location.href='../../../HTML/Login/TelaLogin.html'">Sair</button>
+        </nav>
+    </header>
+
+    <h1>Detalhes do Formulário</h1>
+    <section class="main-content" id="main-content">
+        <form class="form-reembolso-1" id="form-reembolso-1">
+            <label for="id">ID</label>
+            <input type="text" id="id" readonly />
+
+            <label for="usuarioSolicitante">Usuário Solicitante</label>
+            <input type="text" id="usuarioSolicitante" readonly />
+
+            <label for="valorReembolso">Valor do Reembolso</label>
+            <input type="text" id="valorReembolso" readonly />
+
+            <label for="dataValorGasto">Data Valor Gasto</label>
+            <input type="text" id="dataValorGasto" readonly />
+
+            <label for="categoriaReembolso">Categoria do Reembolso</label>
+            <input type="text" id="categoriaReembolso" readonly />
+
+            <label for="comprovante">Comprovante</label>
+            <input type="text" id="comprovante" readonly />
+        </form>
+
+        <form class="form-reembolso-2" id="form-reembolso-2">
+            <label for="usuarioResponsavel">Usuário Responsável</label>
+            <input type="text" id="usuarioResponsavel" readonly />
+
+            <label for="justificativaResponsavel">Justificativa do Responsável</label>
+            <textarea id="justificativaResponsavel"></textarea>
+
+            <label for="status">Status</label>
+            <select name="status" id="status">
+                <option value="" disabled selected>Selecione o Status</option>
+                <option value="PENDENTE">Pendente</option>
+                <option value="PAGO">Pago</option>
+                <option value="CANCELADO">Cancelado</option>
+                <option value="RECUSADO">Recusado</option>
+            </select>
+
+            <div>
+                <p id="erro-atualizacao">Por favor, preencha todos os campos necessários!</p>
+            </div>
+
+            <div>
+                <p id="sucesso-atualizacao">Reembolso atualizado com sucesso!</p>
+            </div>
+                  <button type="submit" id="buttonUpdate" itemid="buttonUpdate">Atualizar Reembolso</button>
+
+        </form>
+    </section>
+
+    <footer class="footer">
+        <p>© 2025 Reembolso Corporativo. Todos os direitos reservados.</p>
+        <p>Contato: suporte@reembolsocorporativo.com | Tel: (11) 1234-5678</p>
+    </footer>
+</body>
+
+</html>

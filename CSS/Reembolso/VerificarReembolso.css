@@ -1,0 +1,104 @@
+/* Padronizada */
+
+.main-content h3 {
+  font-size: 1.8em;
+  text-decoration: underline
+}
+
+.welcome-section h2 {
+  font-weight: 500;
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.welcome-section p {
+  font-size: 1.1rem;
+  color: #bbb;
+  margin-top: 0;
+}
+
+.summary-section {
+  margin: 40px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+
+}
+
+.summary-section h3 {
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.summary-cards {
+  width: 1500px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  background-color: #1f1f1f;
+  border-radius: 10px;
+  padding: 20px;
+  flex: 1 1 200px;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+ .card:hover {
+      transform: scale(1.05);
+    }
+
+    .card h4 {
+      margin: 0 0 10px;
+      font-weight: 400;
+      color: #ccc;
+    }
+
+    .card p {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    .aberto {
+      border-left: 6px solid #e63946;
+    }
+
+    .pendente {
+      border-left: 6px solid #f4a261;
+    }
+
+    .aprovado {
+      border-left: 6px solid #2a9d8f;
+    }
+
+
+@media (max-width: 600px) {
+  .summary-cards {
+    flex-direction: row;
+  }
+
+  nav button {
+    margin: 10px 5px 0 0;
+  }
+}
+
+h3 {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.summary-div {
+  display: flex;
+  justify-content: space-around;
+}

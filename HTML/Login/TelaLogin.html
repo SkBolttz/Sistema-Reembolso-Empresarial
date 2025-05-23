@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Reembolso Corporativo</title>
+  <link rel="stylesheet" href="../../CSS/Login/TelaLogin.css" />
+  <link rel="stylesheet" href="../../CSS/Global/global.css">
+  <script src="../../JS/Login/Login.js"></script>
+  <script src="../../JS/Geral/particles.js"></script>
+  <link rel="shortcut icon" href="../../IMG/LoginIcon.png" type="image/x-icon">
+</head>
+ 
+<body>
+
+<canvas id="particle-canvas"></canvas>
+  <div class="login-container">
+    <h1>Bem-vindo</h1>
+    <form class="login-form" id="login-form">
+      <input type="text" id="nome" placeholder="Nome de usuário" />
+      <input type="password" id="senha" placeholder="Senha" />
+      <div id="erro-login" style="display: none;">
+        <p>Dados de login incorretos!</p>
+      </div>
+      <div id="login-nulo">
+        <p>Por favor, insira todos os dados!</p>
+      </div>
+      <button type="submit">Entrar</button>
+      <button type="button" onclick="window.location.href = '../../HTML/Login/TelaCadastro.html'">Criar Conta</button>
+    </form>
+  </div>
+</body>
+
+</html>

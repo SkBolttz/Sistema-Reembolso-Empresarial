@@ -1,0 +1,80 @@
+/* Padronizada */
+
+h1 {
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #fff;
+}
+
+form {
+    max-width: 600px;
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+    color: #ccc;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: none;
+    background-color: #333;
+    color: #eee;
+    font-size: 1rem;
+    resize: none;
+}
+
+input[readonly],
+textarea[readonly] {
+    background-color: #222;
+    color: #bbb;
+    cursor: default;
+}
+
+textarea {
+    min-height: 80px;
+}
+
+.main-content {
+    padding: 0;
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    align-items: stretch;
+    height: calc(100vh - 160px);
+}
+
+.form-reembolso-1,
+.form-reembolso-2 {
+    flex: 1;
+    padding: 20px;
+    background-color: #1f1f1f;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.05);
+    box-sizing: border-box;
+    height: 80%;
+}
+
+.form-reembolso-1 {
+    border-right: 1px solid #444;
+}
+
+.form-reembolso-2 {
+    border-left: 1px solid #444;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Início | Reembolso Corporativo</title>
+    <link rel="stylesheet" href="../../CSS/Pagina-Inicial/PaginaInicial.css" />
+    <link rel="stylesheet" href="../../CSS/Global/global.css">
+    <script src="../../JS/TelaInicial/NomeAdmin.js"></script>
+    <script src="../../JS/TelaInicial/PainelReembolso.js"></script>
+    <script src="../../JS/Geral/particles.js"></script> 
+    <script src="../../JS/Geral/TranserPage.js"></script>
+    <link rel="shortcut icon" href="../../IMG/PaginaInicialIcon.png" type="image/x-icon">
+</head>
+<canvas id="particle-canvas"></canvas>
+
+<body>
+    <header class="header">
+        <h2 id="nome-admin">Bem-vindo ao Painel Administrativo, (Nome de usuário)!</h2>
+
+        <img src="../../IMG/Bagwork.png" alt="IconPerson" id="IconPerson" style="cursor: pointer;" />
+
+        <nav>
+            <button onclick="window.location.href='../../HTML/Reembolso/PainelReembolso/VerificarReembolsoPendentes.html'">Meus
+                Reembolsos</button>
+            <button onclick="window.location.href='../../HTML/Reembolso/SolicitarReembolso/SolicitarReembolso.html'">Solicitar
+                Reembolso</button>
+            <button onclick="window.location.href='../../HTML/Login/TelaLogin.html'">Sair</button>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <section class="welcome-section">
+
+            <p>Aqui você pode acompanhar e gerenciar todas as solicitações de reembolso dos seus colaboradores de forma
+                clara, prática e segura.</p>
+
+            <p>Para garantir um fluxo eficiente, lembre-se de:</p>
+
+            <ul>
+                <li><strong>Analisar cuidadosamente cada pedido antes de aprovar ou recusar;</strong></li>
+                <li><strong>Seguir rigorosamente as regras e políticas internas da empresa;</strong></li>
+                <li><strong>Em caso de dúvidas ou situações atípicas, consultar o financeiro e/ou o RH;</strong></li>
+                <li><strong>Manter a comunicação aberta com seus funcionários para esclarecer possíveis atrasos ou
+                        pendências.</strong></li>
+            </ul>
+
+            <p>Sua atuação é essencial para que o processo de reembolso seja justo e ágil, garantindo a satisfação dos
+                colaboradores e a conformidade financeira da empresa.</p>
+
+        </section>
+
+        <section class="summary-section">
+            <h3>Resumo Rápido</h3>
+            <div class="summary-cards">
+                <div class="card pendente">
+                    <h3>Reembolsos Pendentes</h4>
+                        <p id="count-pendente"></p>
+                </div>
+                <div class="card aberto">
+                    <h3>Reembolsos Recusados</h4>
+                        <p id="count-recusado"></p>
+                </div>
+                <div class="card aprovado">
+                    <h3>Reembolsos Aprovados</h4>
+                        <p id="count-aprovado"></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="summary-section">
+            <h3>Opcoes de Reembolso</h3>
+            <div class="summary-cards">
+                <div class="card aberto" onclick="window.location.href='../../HTML/Reembolso/SolicitarReembolso/SolicitarReembolso.html'"
+                    style="cursor: pointer;">
+                    <h4>Solicitar Novo Reembolso</h4>
+                    <p><img src="../../IMG/ReembolsoIcon.png" alt="ReembolsoIcon"></p>
+                </div>
+                <div class="card pendente" onclick="window.location.href='../../HTML/Reembolso/PainelReembolso/VerificarReembolsoPendentes.html'"
+                    style="cursor: pointer;">
+                    <h4>Meus Reembolsos Pendentes</h4>
+                    <p><img src="../../IMG/LoadingReembolso.png" alt="ReembolsoLoadingIcon"></p>
+                </div>
+                <div class="card aprovado" onclick="window.location.href='../../HTML/Reembolso/PainelReembolso/VerificarReembolsoConcluido.html'"
+                    style="cursor: pointer;">
+                    <h4>Meus Reembolsos Concluidos</h4>
+                    <p><img src="../../IMG/Concluido.png" alt="ReembolsoConcluido"></p>
+                </div>
+                <div class="card aberto" onclick="window.location.href='../../HTML/Reembolso/PainelReembolso/VerificarReembolsoRecusado.html'"
+                    style="cursor: pointer;">
+                    <h4>Meus Reembolsos Recusados</h4>
+                    <p><img src="../../IMG/Concluido.png" alt="ReembolsoConcluido"></p>
+                </div>
+                <div class="card atualizar"
+                    onclick="window.location.href='../../HTML/Reembolso/AtualizarReembolso/AtualizarReembolsoLista.html'"
+                    style="cursor: pointer;">
+                    <h4>Atualizar Reembolsos</h4>
+                    <p><img src="../../IMG/Concluido.png" alt="ReembolsoConcluido"></p>
+                </div>
+                <div class="card todos" onclick="window.location.href='../../HTML/Reembolso/PainelReembolso/VerificarReembolsoTodos.html'"
+                    style="cursor: pointer;">
+                    <h4>Verificar todos os Reembolsos</h4>
+                    <p><img src="../../IMG/Concluido.png" alt="ReembolsoConcluido"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>© 2025 Reembolso Corporativo. Todos os direitos reservados.</p>
+        <p>Contato: suporte@reembolsocorporativo.com | Tel: (11) 1234-5678</p>
+    </footer>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Solicitar Reembolso | Reembolso Corporativo</title>
+  <link rel="stylesheet" href="../../../CSS/Reembolso/SolicitarReembolso.css" />
+  <link rel="stylesheet" href="../../../CSS/Global/global.css">
+  <script src="../../../JS/Reembolso/SolicitarReembolso/SolicitarReembolso.js"></script>
+  <script src="../../../JS/Geral/TranserPage.js"></script>
+  <script src="../../../JS/Geral/particles.js"></script>
+  <link rel="shortcut icon" href="../../../IMG/IconPerson.png" type="image/x-icon" />
+</head>
+<canvas id="particle-canvas"></canvas>
+
+<body>
+  <header class="header">
+    <h2 id="nome-admin">Solicitação de Reembolso</h2>
+    <img src="../../../IMG/Bagwork.png" alt="IconPerson" id="IconPerson" style="cursor: pointer;" />
+    <nav>
+      <button onclick="window.location.href='../../../HTML/Reembolso/PainelReembolso/VerificarReembolso.html'">Meus
+        Reembolsos</button>
+      <button
+        onclick="window.location.href='../../../HTML/Reembolso/SolicitarReembolso/SolicitarReembolso.html'">Solicitar
+        Reembolso</button>
+      <button onclick="window.location.href='../../../HTML/Login/TelaLogin.html'">Sair</button>
+    </nav>
+  </header>
+
+  <form class="form-reembolso" id="form-reembolso">
+    <h2>Solicitação de Reembolso</h2>
+
+    <input type="text" id="nomeSolicitante" name="nomeSolicitante" disabled>
+    <input type="number" id="valor" name="valor" placeholder="R$ 0,00">
+
+    <select id="categoria" name="categoria">
+      <option value="">Selecione</option>
+      <option value="TRANSPORTE">Transporte</option>
+      <option value="ALIMENTACAO">Alimentação</option>
+      <option value="COMBUSTIVEL">Combustível</option>
+      <option value="SAUDE">Saúde</option>
+      <option value="EDUCACAO">Educação</option>
+      <option value="LAZER">Lazer</option>
+      <option value="OUTROS">Outros</option>
+    </select>
+
+    <input type="date" id="data" name="data" placeholder="Data da Solicitação">
+    <label for="descricao">Descrição:</label>
+    <textarea id="descricao" name="descricao" rows="4" placeholder="Descreva o motivo da solicitação..."></textarea>
+
+    <label for="comprovante">Anexar Comprovante:</label>
+    <input type="file" id="comprovante" name="comprovante" accept="image/*,.pdf">
+
+    <div>
+      <p class="sucesso-solicitacao" id="sucesso-solicitacao">Solicitação enviada com sucesso!</p>
+    </div>
+
+    <div>
+      <p class="erro-solicitacao" id="erro-solicitacao">Por favor, preencha todos os dados!</p>
+    </div>
+
+    <div>
+      <p class="erro-valor" id="erro-valor">Vaor do reembolso não pode ser negativo!</p>
+    </div>
+
+    <div>
+      <p class="erro-data" id="erro-data">Data do reembolso não pode ser futura!</p>
+    </div>
+    <button type="submit">Enviar Solicitação</button>
+  </form>
+
+  <footer class="footer">
+    <p>© 2025 Reembolso Corporativo. Todos os direitos reservados.</p>
+    <p>Contato: suporte@reembolsocorporativo.com | Tel: (11) 1234-5678</p>
+  </footer>
+</body>
+
+</html>

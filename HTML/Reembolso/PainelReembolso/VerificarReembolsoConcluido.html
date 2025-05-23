@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reembolsos Pagos | Reembolso Corporativo</title>
+  <link rel="stylesheet" href="../../../CSS/Reembolso/VerificarReembolso.css">
+  <link rel="stylesheet" href="../../../CSS/Global/global.css">
+  <script src="../../../JS/Geral/particles.js"></script>
+  <script src="../../../JS/Reembolso/PainelReembolso/VerificarReembolsoConcluido.js "></script>
+  <script src="../../../JS/Geral/TranserPage.js"></script>
+  <link rel="shortcut icon" href="../../../IMG/Concluido.png" type="image/x-icon">
+</head>
+<canvas id="particle-canvas"></canvas>
+
+<body>
+  <header class="header">
+    <h2 id="nome-admin">Reembolsos Pagos</h2>
+    <img src="../../../IMG/Bagwork.png" alt="IconPerson" id="IconPerson" style="cursor: pointer;" />
+    <nav>
+      <button onclick="window.location.href='../../../HTML/Reembolso/PainelReembolso/VerificarReembolso.html'">Meus
+        Reembolsos</button>
+      <button
+        onclick="window.location.href='../../../HTML/Reembolso/SolicitarReembolso/SolicitarReembolso.html'">Solicitar
+        Reembolso</button>
+      <button onclick="window.location.href='../../../HTML/Login/TelaLogin.html'">Sair</button>
+    </nav>
+  </header>
+
+
+  <main class="main-content">
+    <div class="summary-div">
+      <h3>Reembolsos Pagos</h3>
+    </div>
+
+    <section class="summary-section">
+      <div class="summary-cards" id="reembolsos-container">
+        <div class="card aprovado" style="cursor: pointer; display: none;" id="template-card">
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>© 2025 Reembolso Corporativo. Todos os direitos reservados.</p>
+    <p>Contato: suporte@reembolsocorporativo.com | Tel: (11) 1234-5678</p>
+  </footer>
+</body>
+
+</html>

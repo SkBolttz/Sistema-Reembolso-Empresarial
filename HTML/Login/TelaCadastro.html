@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cadastro | Reembolso Corporativo</title>
+  <link rel="stylesheet" href="../../CSS/Login/TelaCadastro.css" />
+  <link rel="stylesheet" href="../../CSS/Global/global.css">
+  <link rel="shortcut icon" href="../../IMG/CadastroIcon.png" type="image/x-icon">
+  <script src="../../JS/Login/Registro.js"></script>
+  <script src="../../JS/Geral/particles.js"></script>
+</head>
+
+<body>
+
+<canvas id="particle-canvas"></canvas>
+  <div class="cadastro-container">
+    <h1>Realizar Cadastro</h1>
+    <form class="cadastro-form" id="cadastro-form">
+      <input type="text" name="username" id="username" placeholder="Nome de usuário" />
+      <input type="text" name="email" id="email" placeholder="Email de usuário">
+      <input type="text" name="cpf" id="cpf" placeholder="CPF">
+      <input type="password" name="password" id="password" placeholder="Senha" />
+
+      <select name="role" id="role">
+        <option value="" disabled selected>Selecione o perfil</option>
+        <option value="FUNCIONARIO">Funcionário</option>
+        <option value="GESTOR">Gestor</option>
+        <option value="FINANCEIRO">Financeiro</option>
+      </select>
+
+      <label for="termos">Aceito os <a class="termos-link" href="#">Termos e condições</a></label>
+      <input type="checkbox" name="termos" id="termos">
+      <p class="nome-erro" id="nome-erro">Nome de usuário ja cadastrado!</p>
+      <p class="email-erro" id="email-erro">Email de usuário ja cadastrado!</p>
+      <p class="cpf-erro" id="cpf-erro">CPF ja cadastrado!</p>
+      <p class="erro-campo-nulo" id="erro-campo-nulo">Todos os campos obrigatórios devem ser preenchidos.</p>
+      <p class="erro-cpf-invalido" id="erro-cpf-invalido">O CPF deve ter 11 digitos!</p>
+      <p class="erro-senha-invalido" id="erro-senha-invalido">A senha deve ter no minimo 8 caracteres!</p>
+      <p class="erro-nome-invalido" id="erro-nome-invalido">O nome deve ter entre 10 e 40 caracteres!</p>
+      <p class="termos-erro" id="termos-erro">Por favor, aceite os termos e condições.</p>
+      <button type="submit">Criar Conta</button>
+      <button type="button" onclick="window.location.href = 'TelaLogin.html'">Retornar ao Login</button>
+    </form>
+  </div>
+</body>
+
+</html>
