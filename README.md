@@ -93,13 +93,25 @@ Permite o cadastro e login de usuários, solicitação, consulta e atualização
 
 ![Tela de Login](docs/login.png)
 
-### Solicitação de Reembolso
+### Tela Inicial ( Funcionario )
 
-![Solicitação de Reembolso](docs/solicitacao.png)
+![Tela Inicial](docs/telaInicial.png)
 
-### Listagem de Reembolsos
+### Solicitar Reembolso
 
-![Listagem de Reembolsos](docs/listagem.png)
+![Solicitar Reembolso](docs/solicitarReembolso.png)
+
+### Listagem reembolsos pendentes
+
+![Listagem reembolsos pendentes](docs/listagemPendentes.png)
+
+### Listagem reembolsos pagos
+
+![Listagem reembolsos pagos](docs/listagemPagos.png)
+
+### Listagem reembolsos recusados
+
+![Listagem reembolsos recusados](docs/listagemRecusados.png)
 
 ---
 
