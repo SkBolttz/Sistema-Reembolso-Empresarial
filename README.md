@@ -87,6 +87,28 @@ Permite o cadastro e login de usuários, solicitação, consulta e atualização
 
 ---
 
+## Demonstração
+
+### Tela de Login
+
+![Tela de Login](docs/login.png)
+
+### Solicitação de Reembolso
+
+![Solicitação de Reembolso](docs/solicitacao.png)
+
+### Listagem de Reembolsos
+
+![Listagem de Reembolsos](docs/listagem.png)
+
+---
+
+### Fluxo Completo (GIF)
+
+![Fluxo Completo](docs/fluxo-completo.gif)
+
+
+---
 ## Contato
 
 Para dúvidas, sugestões ou contribuições, abra uma issue ou envie um e-mail para:
