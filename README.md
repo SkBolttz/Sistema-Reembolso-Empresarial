@@ -126,16 +126,10 @@ Permite o cadastro e login de usuários, solicitação, consulta e atualização
 ![istagem todos os Reembolsos](docs/todosReembolsos.png)
 ---
 
-### Fluxo Completo (GIF)
-
-![Fluxo Completo](docs/fluxo-completo.gif)
-
-
----
 ## Contato
 
 Para dúvidas, sugestões ou contribuições, abra uma issue ou envie um e-mail para:
 
 **Henrique**  
-📧 henrique@exemplo.com  
-🔗 [LinkedIn](https://www.linkedin.com/in/henrique)
+📧 pedrohenriqueborba1@gmail.com  
+🔗 [LinkedIn](https://www.linkedin.com/in/pedroheborba/)
