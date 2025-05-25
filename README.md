@@ -113,6 +113,17 @@ Permite o cadastro e login de usuários, solicitação, consulta e atualização
 
 ![Listagem reembolsos recusados](docs/listagemRecusados.png)
 
+### Tela Inicial ( Gestor / Financeiro )
+
+![Tela Inicial ( Gestor / Financeiro )](docs/telaAdministrador.png)
+
+### Listagem pendentes para atualizacao
+
+![Listagem pendentes para atualizacao](docs/atualizacaoReembolso.png)
+
+### Listagem todos os Reembolsos
+
+![istagem todos os Reembolsos](docs/todosReembolsos.png)
 ---
 
 ### Fluxo Completo (GIF)
